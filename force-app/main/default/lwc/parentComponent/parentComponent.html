@@ -1,0 +1,20 @@
+<template>
+  This is parent component
+  <c-child-compoent message="This is new value"> </c-child-compoent>
+
+  <lightning-input
+    value={valOne}
+    name="valOne"
+    onchange={handleChange}
+  ></lightning-input>
+  <lightning-input
+    value={valTwo}
+    name="valTwo"
+    onchange={handleChange}
+  ></lightning-input>
+
+  <lightning-button
+    label="Click"
+    onclick={handleMethodInvocation}
+  ></lightning-button>
+</template>

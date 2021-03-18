@@ -1,0 +1,21 @@
+<template>
+  HEY!!!
+  <lightning-record-view-form
+    record-id={recordId}
+    object-api-name={objectApiName}
+  >
+    <lightning-output-field field-name="Name"></lightning-output-field>
+    <lightning-output-field field-name="Industry"></lightning-output-field>
+    <lightning-output-field field-name="Rating"></lightning-output-field>
+    <lightning-output-field field-name="AccountNumber"></lightning-output-field>
+  </lightning-record-view-form>
+
+  <lightning-record-edit-form object-api-name={objectApiName}>
+    <lightning-input-field field-name="Name"></lightning-input-field>
+    <lightning-input-field field-name="Industry"></lightning-input-field>
+    <lightning-input-field field-name="Rating"></lightning-input-field>
+    <lightning-input-field field-name="AccountNumber"></lightning-input-field>
+
+    <lightning-button label="Update" type="submit"></lightning-button>
+  </lightning-record-edit-form>
+</template>
