@@ -1,0 +1,17 @@
+<apex:page controller="AccountSearchController">
+    
+    <apex:form >
+        <apex:inputText value="{! searchText }" />
+        <apex:commandButton value="Search" action="{! search }" />
+    </apex:form>
+    
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{! accountsList }" var="account" >
+            <apex:column value="{! account.Name }" />
+            <apex:column value="{! account.Industry }" />
+            <apex:column value="{! account.Rating }" />
+        </apex:pageBlockTable>
+        
+    </apex:pageBlock>
+    
+</apex:page>

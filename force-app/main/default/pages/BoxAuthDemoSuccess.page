@@ -1,0 +1,4 @@
+<apex:page controller="BoxAuthDemoController" action="{! getAccessToken }">
+    
+    {! body }
+</apex:page>

@@ -1,0 +1,3 @@
+<apex:page controller="SecondPageController">
+ This is the second page
+</apex:page>

@@ -7,17 +7,31 @@ import INDUSTRY_FIELD from "@salesforce/schema/Account.Industry";
 
 const fields = [NAME_FIELD, RATING_FIELD, INDUSTRY_FIELD];
 
-let superStar = "rajiniKanth";
-
 export default class ExploreGetRecord extends LightningElement {
   @api
   recordId;
+
+  name;
+  rating;
+  industry;
+
+  //   @wire(getRecord, { recordId: "$recordId", fields: fields })
+  //   account;
+
+  //   get name() {
+  //     return getFieldValue(this.account.data, NAME_FIELD);
+  //   }
+  //   get industry() {
+  //     return getFieldValue(this.account.data, INDUSTRY_FIELD);
+  //   }
+  //   get rating() {
+  //     return getFieldValue(this.account.data, RATING_FIELD);
+  //   }
 
   @wire(getRecord, { recordId: "$recordId", fields: fields })
   accountRecord({ error, data }) {
     //data is equal to account.data
     if (data) {
-      console.log(superStar);
       this.name = data.fields.Name.value;
       this.rating = data.fields.Rating.value;
       this.industry = data.fields.Industry.value;

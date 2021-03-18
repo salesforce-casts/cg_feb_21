@@ -1,0 +1,3 @@
+<apex:page standardController="Account" >
+    <apex:image url="https://i.pinimg.com/originals/b7/41/21/b741215d216b11b8ff17f27f4bff2a9d.gif" alt="logo" height="300" width="500" />
+</apex:page>

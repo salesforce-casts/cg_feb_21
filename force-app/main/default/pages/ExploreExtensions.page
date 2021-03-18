@@ -1,0 +1,27 @@
+<apex:page standardController="Account" extensions="ExtensionController1,ExtensionController2,ExtensionController3,ExtensionController4,ExtensionController5">
+    
+    <apex:form >
+        <apex:inputText value="{! message }"/>
+        <apex:commandButton value="Send" action="{! saveRecord }" />
+    </apex:form> 
+    
+    <table>
+        <apex:repeat value="{! accountsList }" var="a" >
+            <tr>                
+                <td>
+                    {! a.Name }
+                </td>                
+                <td>
+                    {! a.Industry }
+                </td>
+                <td>
+                    {! a.Rating }
+                </td>
+                <td>
+                    {! a.Id }
+                </td>
+            </tr>
+        </apex:repeat>
+    </table>    
+    
+</apex:page>
