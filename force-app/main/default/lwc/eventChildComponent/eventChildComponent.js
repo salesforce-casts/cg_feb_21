@@ -9,11 +9,10 @@ export default class EventChildComponent extends LightningElement {
     };
     /* 
     
-    bubbles : false && composed : false
-    bubbles : true && composed : false
-    bubbles : true && composed : true
-    bubbles : false && composed : true
-
+    bubbles : false && composed : false - use this
+    bubbles : true && composed : false - use this
+    bubbles : true && composed : true - very very rarely used 
+    bubbles : false && composed : true - doesn’t exist
 
     */
     this.template.querySelector("p").dispatchEvent(
