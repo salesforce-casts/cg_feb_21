@@ -1,5 +1,11 @@
 <template>
   <div onteja={handleParentOnTeja}>
-    <c-event-child-component></c-event-child-component>
+    <span onteja={handleParentOnTeja}>
+      <p onteja={handleParentOnTeja}>
+        <c-event-child-component
+          onteja={handleParentOnTeja}
+        ></c-event-child-component>
+      </p>
+    </span>
   </div>
 </template>
