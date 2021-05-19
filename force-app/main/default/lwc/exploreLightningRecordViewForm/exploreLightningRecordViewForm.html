@@ -10,7 +10,10 @@
     <lightning-output-field field-name="AccountNumber"></lightning-output-field>
   </lightning-record-view-form>
 
-  <lightning-record-edit-form object-api-name={objectApiName}>
+  <lightning-record-edit-form object-api-name={objectApiName} 
+    onsuccess={handleSuccess}
+    onsubmit={handleSubmit}
+    onerror={handleError}>
     <lightning-input-field field-name="Name"></lightning-input-field>
     <lightning-input-field field-name="Industry"></lightning-input-field>
     <lightning-input-field field-name="Rating"></lightning-input-field>
