@@ -1,44 +1,33 @@
-import { LightningElement, wire, api } from "lwc";
+import { api, LightningElement, wire } from "lwc";
 
+//1.
 import { getRecord, getFieldValue } from "lightning/uiRecordApi";
-import NAME_FIELD from "@salesforce/schema/Account.Name";
-import RATING_FIELD from "@salesforce/schema/Account.Rating";
-import INDUSTRY_FIELD from "@salesforce/schema/Account.Industry";
 
-const fields = [NAME_FIELD, RATING_FIELD, INDUSTRY_FIELD];
+import NAME_FIELD from "@salesforce/schema/Account.Name";
+import INDUSTRY_FIELD from "@salesforce/schema/Account.Industry";
+import RATING_FIELD from "@salesforce/schema/Account.Rating";
 
 export default class ExploreGetRecord extends LightningElement {
   @api
   recordId;
 
-  name;
-  rating;
-  industry;
+  //2.
+  @wire(getRecord, {
+    recordId: "$recordId",
+    fields: [NAME_FIELD, INDUSTRY_FIELD, RATING_FIELD]
+  })
+  accountRecord;
 
-  //   @wire(getRecord, { recordId: "$recordId", fields: fields })
-  //   account;
-
-  //   get name() {
-  //     return getFieldValue(this.account.data, NAME_FIELD);
-  //   }
-  //   get industry() {
-  //     return getFieldValue(this.account.data, INDUSTRY_FIELD);
-  //   }
-  //   get rating() {
-  //     return getFieldValue(this.account.data, RATING_FIELD);
-  //   }
-
-  @wire(getRecord, { recordId: "$recordId", fields: fields })
-  accountRecord({ error, data }) {
-    //data is equal to account.data
-    if (data) {
-      this.name = data.fields.Name.value;
-      this.rating = data.fields.Rating.value;
-      this.industry = data.fields.Industry.value;
-    } else if (error) {
-      console.log(error);
-    }
+  //3.
+  get name() {
+    return getFieldValue(this.accountRecord.data, NAME_FIELD);
   }
 
-  handleClick() {}
+  get industry() {
+    return getFieldValue(this.accountRecord.data, INDUSTRY_FIELD);
+  }
+
+  get rating() {
+    return getFieldValue(this.accountRecord.data, RATING_FIELD);
+  }
 }
