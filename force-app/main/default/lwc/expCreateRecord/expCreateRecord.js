@@ -33,15 +33,6 @@ export default class ExpCreateRecord extends LightningElement {
     //4. Invoking the createRecord method to insert a record
     createRecord(recordInput)
       .then((account) => {
-        /* don't use console.log(JSON.Stringify()) to log an object
-         * It throws text around and it's kind of hard to look for the data we need.
-         */
-
-        // console.log(JSON.stringify(account));
-
-        /*
-         *Use this 👇 and thank me later :p
-         */
         console.dir(account);
       })
       .catch((error) => {
