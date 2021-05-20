@@ -1,0 +1,13 @@
+<template>
+  <template if:true={accounts.data}>
+    <template for:each={accounts.data} for:item="a">
+      <div key={a.Id}>
+        {a.Name} <br />
+        {a.Rating} <br />
+        {a.Industry}
+      </div>
+    </template>
+  </template>
+
+  <lightning-button label="fetch" onclick={handleClick}></lightning-button>
+</template>
