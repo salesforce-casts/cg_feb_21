@@ -18,6 +18,8 @@ export default class ExploreWireProp extends LightningElement {
   }
 
   handleClick() {
-    processAccounts();
+    processAccounts()
+    .then( (data) => {console.log(data);} )
+    .catch( (error) => {console.log(error);} );
   }
 }
