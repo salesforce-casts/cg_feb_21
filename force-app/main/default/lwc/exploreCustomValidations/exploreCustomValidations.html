@@ -1,0 +1,18 @@
+<template>
+  <lightning-input
+    label="Name"
+    name="name"
+    value={nameProp}
+    onchange={handleChange}
+    class="name"
+  ></lightning-input>
+  <lightning-input
+    label="Industry"
+    name="industry"
+    value={industryProp}
+    onchange={handleChange}
+    class="industry"
+  ></lightning-input>
+
+  <lightning-button label="Create" onclick={handleClick}></lightning-button>
+</template>
