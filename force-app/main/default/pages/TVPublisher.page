@@ -1,0 +1,22 @@
+<apex:page >
+    
+    
+    <button onclick="handleClick()">
+        Click Me
+    </button>
+    
+    
+    <script>
+    
+        let CASE_CHANNEL = "{!$MessageChannel.CaseChannel__c}";
+    
+        function handleClick(){
+            let payLoad = {
+                recordId : '0011',
+                name: 'Teja'
+            }
+            
+            sforce.one.publish(CASE_CHANNEL,payLoad);
+        }
+    </script>
+</apex:page>
